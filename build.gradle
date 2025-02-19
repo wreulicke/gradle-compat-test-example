@@ -18,7 +18,13 @@ repositories {
 
 testing {
     suites {
+        configureEach {
+            // ここでuseJUnitJupiterをバージョン指定しないと、デフォルトのバージョンが依存に入ってくる
+            useJUnitJupiter(libs.versions.junit.jupiter)
+        }
+
         differentDepsTest(JvmTestSuite) {
+            // src/differentDepsTest/java 等でテストコードを書かせたくないので srcDirsを上書き
             sources {
                 java {
                     srcDirs = []
@@ -27,6 +33,7 @@ testing {
             targets {
                 configureEach {
                     testTask.configure {
+                        // src/test/java にあるテストを動かすための設定
                         testClassesDirs = sourceSets.test.output.classesDirs
                         classpath += sourceSets.test.output.classesDirs
                         shouldRunAfter(tasks.named("test"))
@@ -37,7 +44,14 @@ testing {
     }
 }
 
+configurations {
+    // なぜか implementationで書いた jackson-databindが以下の記述で追加される・・・
+    differentDepsTestImplementation.extendsFrom testImplementation
+    differentDepsTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
 dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
     implementation 'com.google.protobuf:protobuf-java:3.25.6'
     differentDepsTestRuntimeOnly 'com.google.protobuf:protobuf-java:4.29.3'
 
@@ -53,7 +67,6 @@ java {
 }
 
 tasks.withType(Test).configureEach {
-    useJUnitPlatform()
     testLogging {
         exceptionFormat = 'full'
     }

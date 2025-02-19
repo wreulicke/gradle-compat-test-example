@@ -3,11 +3,17 @@
  */
 package org.example;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.DescriptorProtos;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
+
+    @Test
+    void jacksonTest() {
+        new ObjectMapper();
+    }
 
     @Test
     void protobufTest() {

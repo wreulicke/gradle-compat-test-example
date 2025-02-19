@@ -1,4 +1,5 @@
 Calculating task graph as configuration cache cannot be reused because file 'build.gradle' has changed.
+> Task :clean
 
 > Task :dependencies
 
@@ -16,6 +17,15 @@ apiElements - API elements for the 'main' feature. (n)
 No dependencies
 
 compileClasspath - Compile classpath for source set 'main'.
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 (c)
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.18.2 (c)
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+|    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
 \--- com.google.protobuf:protobuf-java:3.25.6
 
 compileOnly - Compile-only dependencies for the 'main' feature. (n)
@@ -37,23 +47,33 @@ differentDepsTestAnnotationProcessor - Annotation processors and their dependenc
 No dependencies
 
 differentDepsTestCompileClasspath - Compile classpath for source set 'different deps test'.
-\--- org.junit.jupiter:junit-jupiter:5.8.2
-     +--- org.junit:junit-bom:5.8.2
-     |    +--- org.junit.jupiter:junit-jupiter:5.8.2 (c)
-     |    +--- org.junit.jupiter:junit-jupiter-api:5.8.2 (c)
-     |    +--- org.junit.jupiter:junit-jupiter-params:5.8.2 (c)
-     |    \--- org.junit.platform:junit-platform-commons:1.8.2 (c)
-     +--- org.junit.jupiter:junit-jupiter-api:5.8.2
-     |    +--- org.junit:junit-bom:5.8.2 (*)
-     |    +--- org.opentest4j:opentest4j:1.2.0
-     |    +--- org.junit.platform:junit-platform-commons:1.8.2
-     |    |    +--- org.junit:junit-bom:5.8.2 (*)
-     |    |    \--- org.apiguardian:apiguardian-api:1.1.2
-     |    \--- org.apiguardian:apiguardian-api:1.1.2
-     \--- org.junit.jupiter:junit-jupiter-params:5.8.2
-          +--- org.junit:junit-bom:5.8.2 (*)
-          +--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
-          \--- org.apiguardian:apiguardian-api:1.1.2
++--- org.junit.jupiter:junit-jupiter:5.10.3
+|    +--- org.junit:junit-bom:5.10.3
+|    |    +--- org.junit.jupiter:junit-jupiter:5.10.3 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-api:5.10.3 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-params:5.10.3 (c)
+|    |    \--- org.junit.platform:junit-platform-commons:1.10.3 (c)
+|    +--- org.junit.jupiter:junit-jupiter-api:5.10.3
+|    |    +--- org.junit:junit-bom:5.10.3 (*)
+|    |    +--- org.opentest4j:opentest4j:1.3.0
+|    |    +--- org.junit.platform:junit-platform-commons:1.10.3
+|    |    |    +--- org.junit:junit-bom:5.10.3 (*)
+|    |    |    \--- org.apiguardian:apiguardian-api:1.1.2
+|    |    \--- org.apiguardian:apiguardian-api:1.1.2
+|    \--- org.junit.jupiter:junit-jupiter-params:5.10.3
+|         +--- org.junit:junit-bom:5.10.3 (*)
+|         +--- org.junit.jupiter:junit-jupiter-api:5.10.3 (*)
+|         \--- org.apiguardian:apiguardian-api:1.1.2
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 (c)
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.18.2 (c)
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+|    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+\--- com.google.protobuf:protobuf-java:3.25.6
 
 differentDepsTestCompileOnly - Compile only dependencies for source set 'different deps test'. (n)
 No dependencies
@@ -62,39 +82,50 @@ differentDepsTestImplementation - Implementation only dependencies for source se
 No dependencies
 
 differentDepsTestRuntimeClasspath - Runtime classpath of source set 'different deps test'.
-+--- org.junit.jupiter:junit-jupiter:5.8.2
-|    +--- org.junit:junit-bom:5.8.2
-|    |    +--- org.junit.jupiter:junit-jupiter:5.8.2 (c)
-|    |    +--- org.junit.jupiter:junit-jupiter-api:5.8.2 (c)
-|    |    +--- org.junit.jupiter:junit-jupiter-engine:5.8.2 (c)
-|    |    +--- org.junit.jupiter:junit-jupiter-params:5.8.2 (c)
-|    |    +--- org.junit.platform:junit-platform-launcher:1.8.2 (c)
-|    |    +--- org.junit.platform:junit-platform-commons:1.8.2 (c)
-|    |    \--- org.junit.platform:junit-platform-engine:1.8.2 (c)
-|    +--- org.junit.jupiter:junit-jupiter-api:5.8.2
-|    |    +--- org.junit:junit-bom:5.8.2 (*)
-|    |    +--- org.opentest4j:opentest4j:1.2.0
-|    |    \--- org.junit.platform:junit-platform-commons:1.8.2
-|    |         \--- org.junit:junit-bom:5.8.2 (*)
-|    +--- org.junit.jupiter:junit-jupiter-params:5.8.2
-|    |    +--- org.junit:junit-bom:5.8.2 (*)
-|    |    \--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
-|    \--- org.junit.jupiter:junit-jupiter-engine:5.8.2
-|         +--- org.junit:junit-bom:5.8.2 (*)
-|         +--- org.junit.platform:junit-platform-engine:1.8.2
-|         |    +--- org.junit:junit-bom:5.8.2 (*)
-|         |    +--- org.opentest4j:opentest4j:1.2.0
-|         |    \--- org.junit.platform:junit-platform-commons:1.8.2 (*)
-|         \--- org.junit.jupiter:junit-jupiter-api:5.8.2 (*)
++--- org.junit.jupiter:junit-jupiter:5.10.3
+|    +--- org.junit:junit-bom:5.10.3
+|    |    +--- org.junit.jupiter:junit-jupiter:5.10.3 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-api:5.10.3 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-engine:5.10.3 (c)
+|    |    +--- org.junit.jupiter:junit-jupiter-params:5.10.3 (c)
+|    |    +--- org.junit.platform:junit-platform-launcher:1.10.3 (c)
+|    |    +--- org.junit.platform:junit-platform-commons:1.10.3 (c)
+|    |    \--- org.junit.platform:junit-platform-engine:1.10.3 (c)
+|    +--- org.junit.jupiter:junit-jupiter-api:5.10.3
+|    |    +--- org.junit:junit-bom:5.10.3 (*)
+|    |    +--- org.opentest4j:opentest4j:1.3.0
+|    |    \--- org.junit.platform:junit-platform-commons:1.10.3
+|    |         \--- org.junit:junit-bom:5.10.3 (*)
+|    +--- org.junit.jupiter:junit-jupiter-params:5.10.3
+|    |    +--- org.junit:junit-bom:5.10.3 (*)
+|    |    \--- org.junit.jupiter:junit-jupiter-api:5.10.3 (*)
+|    \--- org.junit.jupiter:junit-jupiter-engine:5.10.3
+|         +--- org.junit:junit-bom:5.10.3 (*)
+|         +--- org.junit.platform:junit-platform-engine:1.10.3
+|         |    +--- org.junit:junit-bom:5.10.3 (*)
+|         |    +--- org.opentest4j:opentest4j:1.3.0
+|         |    \--- org.junit.platform:junit-platform-commons:1.10.3 (*)
+|         \--- org.junit.jupiter:junit-jupiter-api:5.10.3 (*)
 +--- com.google.protobuf:protobuf-java:4.29.3
-\--- org.junit.platform:junit-platform-launcher -> 1.8.2
-     +--- org.junit:junit-bom:5.8.2 (*)
-     \--- org.junit.platform:junit-platform-engine:1.8.2 (*)
++--- org.junit.platform:junit-platform-launcher -> 1.10.3
+|    +--- org.junit:junit-bom:5.10.3 (*)
+|    \--- org.junit.platform:junit-platform-engine:1.10.3 (*)
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 (c)
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.18.2 (c)
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+|    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+\--- com.google.protobuf:protobuf-java:3.25.6 -> 4.29.3
 
 differentDepsTestRuntimeOnly - Runtime only dependencies for source set 'different deps test'. (n)
 \--- com.google.protobuf:protobuf-java:4.29.3 (n)
 
 implementation - Implementation dependencies for the 'main' feature. (n)
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (n)
 \--- com.google.protobuf:protobuf-java:3.25.6 (n)
 
 jacocoAgent - The Jacoco agent to use to get coverage data.
@@ -117,6 +148,15 @@ mainSourceElements - List of source directories contained in the Main SourceSet.
 No dependencies
 
 runtimeClasspath - Runtime classpath of source set 'main'.
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 (c)
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.18.2 (c)
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+|    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
 \--- com.google.protobuf:protobuf-java:3.25.6
 
 runtimeElements - Runtime elements for the 'main' feature. (n)
@@ -129,6 +169,15 @@ testAnnotationProcessor - Annotation processors and their dependencies for sourc
 No dependencies
 
 testCompileClasspath - Compile classpath for source set 'test'.
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 (c)
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.18.2 (c)
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+|    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
 +--- com.google.protobuf:protobuf-java:3.25.6
 \--- org.junit.jupiter:junit-jupiter:5.10.3
      +--- org.junit:junit-bom:5.10.3
@@ -155,6 +204,15 @@ testImplementation - Implementation only dependencies for source set 'test'. (n)
 \--- org.junit.jupiter:junit-jupiter:5.10.3 (n)
 
 testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- com.fasterxml.jackson.core:jackson-databind:2.18.2
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 (c)
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.18.2 (c)
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.18.2 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.18.2
+|    |    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
+|    \--- com.fasterxml.jackson:jackson-bom:2.18.2 (*)
 +--- com.google.protobuf:protobuf-java:3.25.6
 +--- org.junit.jupiter:junit-jupiter:5.10.3
 |    +--- org.junit:junit-bom:5.10.3
@@ -194,6 +252,6 @@ testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
 
 A web-based, searchable dependency report is available by adding the --scan option.
 
-BUILD SUCCESSFUL in 605ms
-1 actionable task: 1 executed
+BUILD SUCCESSFUL in 753ms
+2 actionable tasks: 2 executed
 Configuration cache entry stored.
